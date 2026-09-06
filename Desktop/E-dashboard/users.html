@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - Enterprise Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Enterprise Dashboard</h1>
+
+        <nav aria-label="Main Navigation">
+            <a href="index.html">Dashboard</a>
+            <a href="users.html">Users</a>
+        </nav>
+    </header>
+
+    <aside>
+        <h2>Sidebar</h2>
+
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="users.html">Users</a></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <section>
+            <h2>User Management</h2>
+            <p>Manage registered users.</p>
+        </section>
+
+        <section>
+            <h2>Add New User</h2>
+
+            <form>
+                <fieldset>
+                    <legend>User Information</legend>
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <br><br>
+
+                    <label for="role">Role:</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select a role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+
+                    <br><br>
+
+                    <button type="submit">Add User</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <h2>User List</h2>
+
+            <table>
+                <caption>Registered Users</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Admin User</td>
+                        <td>admin@example.com</td>
+                        <td>Admin</td>
+                    </tr>
+
+                    <tr>
+                        <td>Demo User</td>
+                        <td>user@example.com</td>
+                        <td>User</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>User Actions</h2>
+
+            <button type="button"
+                onclick="document.getElementById('userDialog').showModal()">
+                Open User Details
+            </button>
+
+            <dialog id="userDialog" aria-labelledby="dialogTitle">
+
+                <h2 id="dialogTitle">User Details</h2>
+
+                <p>View user information here.</p>
+
+                <button type="button"
+                    onclick="document.getElementById('userDialog').close()">
+                    Close
+                </button>
+
+            </dialog>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Enterprise Dashboard</p>
+    </footer>
+
+</body>
+
+</html>
